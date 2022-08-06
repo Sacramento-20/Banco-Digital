@@ -9,6 +9,7 @@ class Pessoa{
     std::string senhaEmail;
     std::string telefone;
     std::string nacionalidade;
+    double renda = 0;
   public:
    // construtor
     Pessoa();
@@ -18,11 +19,13 @@ class Pessoa{
     void setSenha(std::string senha);
     void setTelefone(std::string telefone);
     void setNacionalidade(std::string nacionalidade);
+    void setRenda(double renda);
 
     std::string getNome();
     std::string getEmail();
     std::string getsenhaEmail();
     std::string getTelefone();
+    double getRenda();
     
    // destrutor 
     virtual ~Pessoa();

@@ -9,14 +9,11 @@ class Usuario : public Pessoa{
   private:
     Endereco endereco;
     Conta conta;
-    double renda = 0;
-
+    
   public:
     // construtor
     Usuario();
     // funções
-    
-    void setRenda(double renda);
     void cadastrarEndereco(Endereco& endereco);
     void virtual cadastrarConta(Conta& conta);
     void exibir();

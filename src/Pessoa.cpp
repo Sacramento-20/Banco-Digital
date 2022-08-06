@@ -18,6 +18,11 @@ void Pessoa::setTelefone(std::string telefone){
   this -> telefone = telefone;
 }
 
+void Pessoa::setRenda(double renda){
+  this -> renda = renda;
+}
+
+
 std::string Pessoa::getEmail(){
     return this -> Email;
 }
@@ -32,6 +37,10 @@ std::string Pessoa::getsenhaEmail(){
 
 std::string Pessoa::getTelefone(){
     return this -> telefone;
+}
+
+double Pessoa::getRenda(){
+    return this -> renda;
 }
 
 Pessoa::~Pessoa(){
