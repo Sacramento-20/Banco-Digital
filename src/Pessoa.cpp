@@ -14,6 +14,10 @@ void Pessoa::setSenha(std::string senha){
     this -> senhaEmail = senha; 
 }
 
+void Pessoa::setTelefone(std::string telefone){
+  this -> telefone = telefone;
+}
+
 std::string Pessoa::getEmail(){
     return this -> Email;
 }
@@ -24,6 +28,10 @@ std::string Pessoa::getNome(){
 
 std::string Pessoa::getsenhaEmail(){
     return this -> senhaEmail;
+}
+
+std::string Pessoa::getTelefone(){
+    return this -> telefone;
 }
 
 Pessoa::~Pessoa(){

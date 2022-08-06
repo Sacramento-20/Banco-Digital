@@ -9,14 +9,13 @@ class Usuario : public Pessoa{
   private:
     Endereco endereco;
     Conta conta;
-    std::string telefone;
     double renda = 0;
 
   public:
     // construtor
     Usuario();
     // funções
-    void setTelefone(std::string telefone);
+    
     void setRenda(double renda);
     void cadastrarEndereco(Endereco& endereco);
     void virtual cadastrarConta(Conta& conta);
