@@ -3,19 +3,14 @@
 Usuario::Usuario(){
 }
 
-
-void Usuario::cadastrarEndereco(Endereco& endereco){
-    this -> endereco = endereco;
-}
-
-void Usuario::exibir(){
-  std::cout << "nome: " << getNome() << "\n";
+void Usuario::exibirUsuario(){
+  std::cout << "Nome: " << getNome() << "\n";
+  std::cout << "CPF: " << getCPF() << "\n";
   std::cout << "Email: " << getEmail() << "\n";
-  std::cout << "telefone: " << getTelefone() << "\n";
-  std::cout << "renda: " << getRenda() << "\n";
-  std::cout << "senha: " << getsenhaEmail() << "\n";
-  std::cout << "------------------------------------------------------" << "\n";
-  // endereco.exibirEndereco();
+  std::cout << "Telefone: " << getTelefone() << "\n";
+  std::cout << std::fixed << std::setprecision(2);
+  std::cout << "Renda: R$ " << getRenda() << "\n";
+  std::cout << "Senha: " << getsenhaEmail() << "\n";
 }
 
 Usuario::~Usuario(){

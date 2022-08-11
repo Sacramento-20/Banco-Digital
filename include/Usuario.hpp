@@ -2,23 +2,18 @@
 #define USUARIO_H
 #include "Pessoa.hpp"
 #include "Endereco.hpp"
-#include "Conta.hpp"
-
+#include <iomanip>
 
 class Usuario : public Pessoa{
   private:
-    Endereco endereco;
-    Conta conta;
-    
+
   public:
     // construtor
     Usuario();
     // funções
-    void cadastrarEndereco(Endereco& endereco);
-    void virtual cadastrarConta(Conta& conta);
-    void exibir();
+    void exibirUsuario();
     // destrutor
-    // virtual ~Usuario();
+    virtual ~Usuario();
 };
 
 
