@@ -2,6 +2,7 @@
 
 Pessoa::Pessoa(){}
 
+// sets
 void Pessoa::setNome(std::string nome){
     this -> nome = nome; 
 }
@@ -22,6 +23,7 @@ void Pessoa::setRenda(double renda){
   this -> renda = renda;
 }
 
+// gets
 
 std::string Pessoa::getEmail(){
     return this -> Email;
