@@ -1,29 +1,13 @@
 #include "Cadastro.hpp"
-
-std::string validadorNumero(){
-  bool modificador = false;
-  std::string telefone;
-  
-  while(modificador != true){
-    std::cout << "Telefone: ";
-    std:: cin >> telefone;
-    if (telefone.length() < 11){
-      std::cout << "Número inválido !\n";
-      sleep(0.5);
-    }
-    else{
-      modificador = true;
-    }
-  }
-  return telefone;
-}
+#include "FuncoesConta.hpp"
 
 
-void Cadastro(RepositorioUsuario& rep_u, RepositorioEndereco& rep_e){
+void Cadastro(RepositorioUsuario& rep_u, RepositorioEndereco& rep_e, Banco& banco){
     // objetos
   
   Usuario usuario;
   Endereco endereco;
+  Conta conta;
   
   //variaveis de Usuario
   std::string nome, cpf, Email, senhaEmail, telefone, nacionalidade;
@@ -31,7 +15,9 @@ void Cadastro(RepositorioUsuario& rep_u, RepositorioEndereco& rep_e){
   //variaveis de endereço
   std::string rua, complemento, bairro, cep, cidade, estado, pais;
   int numero = 0;
-
+  // variaveis de conta
+  std::string numeroConta, senhaConta;
+  bool validador = true;
 
   std::cout << " --------------------------------------\n";
   std::cout << " --------- Cadastro de Usuário --------\n";
@@ -82,6 +68,22 @@ void Cadastro(RepositorioUsuario& rep_u, RepositorioEndereco& rep_e){
   rep_e.cadastrarEndereco(usuario.getCPF(),endereco);
   
   // colocar os dados de conta aqui
+  std::cout << " --------------------------------------\n";
+  std::cout << " ---------- Cadastro de Conta ---------\n";
+  std::cout << " --------------------------------------\n";
+  // cadastrando a senha informada pelo usuario
+  std::cout << "Informa a senha da sua conta: "; std::cin >> senhaConta; conta.setSenha(senhaConta);
+  
+  while(validador){
+    numeroConta = geradorNumeroConta(banco);
+    // se retornar falso é porque tem, se retornar true é porque não tem
+    if(banco.comparadorContas(numeroConta) == true){
+      conta.setConta(numeroConta);
+      validador = false;
+    }
+  }
+
+  banco.cadastrarConta(usuario.getCPF(), conta);
 
   system("clear");
 }

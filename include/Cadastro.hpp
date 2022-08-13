@@ -1,7 +1,6 @@
 #include "RepositorioEndereco.hpp"
 #include "RepositorioUsuario.hpp"
-#include <unistd.h>
+#include "Banco.hpp"
 
-std::string validadorNumero();
+void Cadastro(RepositorioUsuario& rep_u, RepositorioEndereco& rep_e, Banco& banco);
 
-void Cadastro(RepositorioUsuario& rep_u, RepositorioEndereco& rep_e);
