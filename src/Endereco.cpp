@@ -1,8 +1,9 @@
 #include "Endereco.hpp"
 
-Endereco::Endereco(){
+// CONSTRUTOR
+Endereco::Endereco(){}
 
-}
+// SETS
 void Endereco::setRua(std::string rua){
   this -> rua = rua;
 }
@@ -35,16 +36,16 @@ void Endereco::setNumero(int numero){
   this -> numero = numero;
 }
 
+// EXIBE TODAS AS INFORMAÇÕES DE ENDEREÇO.
 void Endereco::exibirEndereco(){
-  std::cout << "rua: " << this -> rua << "\n";
-  std::cout << "complemento: " << this -> complemento << "\n";
-  std::cout << "bairro: " << this -> bairro << "\n";
-  std::cout << "cep: " << this -> cep << "\n";
-  std::cout << "cidade: " << this -> cidade << "\n";
-  std::cout << "estado: " << this -> estado << "\n";
-  std::cout << "pais: " << this -> pais << "\n";
-  std::cout << "numero: " << this -> numero << "\n";
+  std::cout << "RUA: " << this -> rua << "\n";
+  std::cout << "COMPLEMENTO: " << this -> complemento << "\n";
+  std::cout << "BAIRRO: " << this -> bairro << "\n";
+  std::cout << "CEP: " << this -> cep << "\n";
+  std::cout << "CIDADE: " << this -> cidade << "\n";
+  std::cout << "ESTADO: " << this -> estado << "\n";
+  std::cout << "PAIS: " << this -> pais << "\n";
+  std::cout << "NÚMERO: " << this -> numero << "\n";
 }
 
-Endereco::~Endereco(){
-}
+Endereco::~Endereco(){}
