@@ -1,9 +1,7 @@
 #ifndef ENDERECO_H
 #define ENDERECO_H
-
-// #include "ExceptionEndereco.hpp"
-
 #include <iostream>
+// #include "ExceptionEndereco.hpp"
 
 class Endereco {
   private:
@@ -11,9 +9,10 @@ class Endereco {
     int numero;
 
   public:
-    // construtor
+    // CONSTRUTOR
     Endereco();
-    // funções
+
+    // FUNÇÕES
     void setRua(std::string rua);
     void setComplemento(std::string complemento);
     void setBairro(std::string bairro);
@@ -22,9 +21,11 @@ class Endereco {
     void setEstado(std::string estado);
     void setPais(std::string pais);
     void setNumero(int numero);
-
+    
+    // FUNÇÃO RESPONSÁVEL POR EXIBIR TODAS OS ATRIBUTOS DO ENDEREÇO.
     void exibirEndereco();
-    // destrutor
+    
+    // DESTRUTOR
     virtual ~Endereco();
 };
 

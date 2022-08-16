@@ -4,15 +4,18 @@
 #include "Endereco.hpp"
 #include <iomanip>
 
+// CLASSE USUÁRIO HERDANDO OS ATRIBUTOS E FUNÇÕES DA CLASSE PESSOA.
 class Usuario : public Pessoa{
   private:
 
   public:
-    // construtor
+    // CONSTRUTOR
     Usuario();
-    // funções
+
+    // FUNÇÃO RESPONSÁVEL POR EXIBIR TODAS AS INFOMAÇÕES DO USUÁRIO.
     void exibirUsuario();
-    // destrutor
+    
+    // DESTRUTOR
     virtual ~Usuario();
 };
 

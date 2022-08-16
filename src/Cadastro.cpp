@@ -56,7 +56,8 @@ void Cadastro(RepositorioUsuario& rep_u, RepositorioEndereco& rep_e, Banco& banc
   std::cout << "Bairro: ";std:: cin >> bairro;endereco.setBairro(bairro);
 
   std::cout << "Número: ";std:: cin >> numero;endereco.setNumero(numero); 
-  
+  // endereco.setNumero(validadorNumeroEndereco());
+
   std::cout << "CEP: ";std:: cin >> cep;endereco.setCEP(cep);
   
   std::cout << "Cidade: ";std:: cin >> cidade;endereco.setCidade(cidade);
@@ -71,9 +72,26 @@ void Cadastro(RepositorioUsuario& rep_u, RepositorioEndereco& rep_e, Banco& banc
   std::cout << " --------------------------------------\n";
   std::cout << " ---------- Cadastro de Conta ---------\n";
   std::cout << " --------------------------------------\n";
-  // cadastrando a senha informada pelo usuario
-  std::cout << "Informa a senha da sua conta: "; std::cin >> senhaConta; conta.setSenha(senhaConta);
   
+  // cadastrando a senha informada pelo usuario
+  std::cout << "Informe a senha da sua conta: "; 
+  while(validador){
+    std::cin >> senhaConta; 
+    if(senhaConta.length() < 4 && senhaConta.length() > 8){
+      std::cout << "Senha deve conter entre 4 e 8 caracteres.";
+      sleep(2);
+      system("clear");
+      std::cout << "informe uma nova senha: ";
+    }
+    else{
+      conta.setSenha(senhaConta);
+      validador = false;
+    }
+  }
+  
+  // gerando um numero de conta
+
+  validador = true;
   while(validador){
     numeroConta = geradorNumeroConta(banco);
     // se retornar falso é porque tem, se retornar true é porque não tem

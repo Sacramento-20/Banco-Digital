@@ -1,8 +1,10 @@
 #include "Pessoa.hpp"
 
+// CONSTRUTOR
 Pessoa::Pessoa(){}
 
-// sets
+// SETS
+
 void Pessoa::setNome(std::string nome){
     this -> nome = nome; 
 }
@@ -12,7 +14,7 @@ void Pessoa::setCPF(std::string cpf){
 }
 
 void Pessoa::setEmail(std::string email){
-    this -> Email = email; 
+    this -> email = email; 
 }
 
 void Pessoa::setSenha(std::string senha){
@@ -28,11 +30,11 @@ void Pessoa::setNacionalidade(std::string nacionalidade){
 }
 
 void Pessoa::setRenda(double renda){
+	
   this -> renda = renda;
 }
 
-// gets
-
+// GETS
 
 std::string Pessoa::getNome(){
     return this -> nome;
@@ -43,7 +45,7 @@ std::string Pessoa::getCPF(){
 }
 
 std::string Pessoa::getEmail(){
-    return this -> Email;
+    return this -> email;
 }
 
 std::string Pessoa::getsenhaEmail(){
@@ -55,8 +57,9 @@ std::string Pessoa::getTelefone(){
 }
 
 double Pessoa::getRenda(){
-    return this -> renda;
+	return this -> renda;
 }
 
+// DESTRUTOR
 Pessoa::~Pessoa(){
 }

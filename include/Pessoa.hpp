@@ -2,14 +2,16 @@
 #define PESSOA_H
 #include <iostream>
 
+
 class Pessoa{
   private:
-    std::string nome, cpf, Email, senhaEmail, telefone, nacionalidade;
+    std::string nome, cpf, email, senhaEmail, telefone, nacionalidade;
     double renda = 0;
   public:
-   // construtor
+  // CONSTRUTOR
     Pessoa();
-   // funções
+
+  // FUNÇÕES RESPONSAVEIS POR ALTERAR O VALOR DOS ATRIBUTOS DO OBJETO. 
     void setNome(std::string nome);
     void setCPF(std::string cpf);
     void setEmail(std::string email); 
@@ -18,6 +20,7 @@ class Pessoa{
     void setNacionalidade(std::string nacionalidade);
     void setRenda(double renda);
 
+  // FUNÇÕES RESPONSÁVEIS POR RETORNAR OS ATRIBUTOS.
     std::string getNome();
     std::string getCPF();
     std::string getEmail();
@@ -25,8 +28,9 @@ class Pessoa{
     std::string getTelefone();
     double getRenda();
     
-   // destrutor 
+   // DESTRUTOR 
     virtual ~Pessoa();
+    
 };
 
 
