@@ -1,11 +1,12 @@
 #include "FuncoesConta.hpp"
 
-// atraves de um algoritmo que gera numeros aleatorios com base na hora, é gerado um numero entre 10000000 e 99999999.
+// O ALGORITMO IRÁ GERAR UMA SÉRIE DE NÚMEROS ALEATORIO ENTRE 10000000 E 99999999. ESSE VALOR SERÁ O NÚMERO DA CONTA DO CLIENTE.
 std::string geradorNumeroConta(Banco& banco){
   int contaNumerico;
   std::string contaString;
-
-  srand((unsigned)time(0)); //para gerar números aleatórios reais.
+  
+  // SE BASEIA NO HORARIO PARA CRIAR UMA SEED PARA A GERAÇÃO DO NÚMERO
+  srand((unsigned)time(0));
   int maior = 99999999; 
   int menor = 10000000; 
   contaNumerico = rand()%(maior-menor+1) + menor;
@@ -14,6 +15,7 @@ std::string geradorNumeroConta(Banco& banco){
   return contaString;
 }
 
+// RESPONSÁVEL POR VALIDAR O LIMITE DE CARACTERES QUE UMA NÚMERO DE TELEFONE DEVE TER.
 std::string validadorNumero(){
   bool modificador = false;
   std::string telefone;
@@ -30,5 +32,23 @@ std::string validadorNumero(){
     }
   }
   return telefone;
+}
+
+// VALIDA QUE TODA A ENTRADA PERTENCENTE AO NÚMERO SERÁ UM ATRIBUTO NUMÉRICO
+int validadorNumeroEndereco(){
+  bool modificador = false;
+  int numero;
+  while(modificador != true){
+    std::cout << "Número: ";
+    std:: cin >> numero;
+    if (!std::cin.fail()){
+      return numero;
+      // modificador = true;
+    }
+    // std::cin.clear();
+    std::cout << "valor não corresponde a um tipo númerico. \n";
+
+  }
+  return numero;
 }
 
